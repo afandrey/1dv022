@@ -1,0 +1,55 @@
+.remember-app {
+    width: 400px;
+    height: 500px;
+}
+
+.remember-app .window-content {
+    background: #e3c1ba;
+    position: relative;
+}
+
+.remember-app .remember-form {
+    bottom: 3px;
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    border-top: 1px solid #000000;
+}
+
+.remember-app .remember-form .note-input {
+    resize: none;
+    width: calc(100% - 56px);
+    margin: 2px;
+    height: 37px;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: auto;
+    padding: 2px;
+    font-size: 16px;
+}
+
+.remember-app .remember-form .note-button {
+    top: 0;
+    position: absolute;
+    width: 39px;
+    height: 41px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    background-color: #e3c1ba;
+    font-weight: bold;
+}
+
+.remember-app .note-list {
+    height: calc(100% - 45px);
+    overflow: auto;
+}
+
+.remember-app .note-list ul {
+    padding-bottom: 5px;
+}
+
+.remember-app .note-list ul li {
+    padding-top: 5px;
+    display: block;
+}

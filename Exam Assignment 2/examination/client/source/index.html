@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Examination 2</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+
+    <template id="temp-question">
+        <div id="timer"><h1 class="timerH1">-</h1></div>
+        <div id="question">
+            <h1 class="quizHead"></h1>
+            <form id="quizForm">
+                <p>Answer</p>
+                <input type="text" id="answer" autocomplete="off"/><br>
+                <input type="button" id="submit" value="Next"/>
+            </form>
+        </div>
+    </template>
+
+    <template id="temp-questionAlt">
+        <div id="timer"><h1 class="timerH1">-</h1></div>
+        <div id="question">
+            <h1 class="quizHead"></h1>
+            <form id="quizForm">
+                <input type="button" id="submit" value="Next"/>
+            </form>
+        </div>
+    </template>
+
+    <template id="temp-alternative">
+        <div class="alternativeList">
+            <label class="radio-label"><input type="radio" name="alternative"/></label>
+        </div>
+    </template>
+
+    <template id="temp-answer">
+        <div id="answer-response">
+            <p></p>
+        </div>
+    </template>
+
+    <template id="temp-newHighscore">
+        <div>
+            <h1>New Highscore!</h1>
+            <h3>Game finished in <span class="time"></span>seconds</h3>
+            <h2 class="hs-title"></h2>
+            <table>
+            </table>
+            <p class="newGame"><a href="?">Play again?</a></p>
+        </div>
+    </template>
+
+    <template id="temp-quizFinished">
+        <div>
+            <h3 class="show-score">Game finished in <span class="time"></span>seconds</h3>
+            <h2 class="hs-title"></h2>
+            <table>
+            </table>
+            <p class="newGame"><a href="?">Play again?</a></p>
+        </div>
+    </template>
+
+    <template id="temp-gameOver">
+        <div>
+            <h1></h1>
+            <h2 class="hs-title"></h2>
+            <table>
+            </table>
+            <p class="newGame"><a href="?">Play again?</a></p>
+        </div>
+    </template>
+
+    <template id="temp-highscoreList">
+        <tr>
+            <td class="hs-nickname"></td>
+            <td class="hs-score"></td>
+        </tr>
+    </template>
+</head>
+<body>
+<div id="wrapper">
+    <div id="content">
+        <div id="welcome">
+            <h1 class="welcomeText">Let's quiz!</h1>
+            <p class="description">This is a quiz I made for a course at Linnéuniversitetet.</p>
+            <form id="quizForm">
+                <p class="nickname">Nickname:</p>
+                <input type="text" id="nickname"/> <br>
+                <input type="button" id="submit" value="Next"/>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="javascript/build.js"></script>
+</body>
+</html>

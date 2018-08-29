@@ -1,0 +1,126 @@
+body {
+    font-family: Calibri, sans-serif;
+    background: #8DB5F4;
+    color: #000154;
+}
+
+h1 {
+    text-align: center;
+}
+
+#wrapper {
+    margin: auto;
+    max-width: 800px;
+    max-height: 400px;
+    padding: 20px;
+    background: #CDDCF2;
+    border-radius: 25px;
+    border: 2px solid #000154;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#content {
+    width: 100%;
+    clear: both;
+    margin-top: 20px;
+}
+
+.description {
+    text-align: center;
+}
+
+.welcomeText {
+    font-size: 3em;
+}
+
+#quizForm {
+    padding: 20px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.nickname {
+    font-size: 18px;
+}
+
+input[type="text"] {
+    font-size: 35px;
+    line-height: 35px;
+    padding: 5px;
+    height: 50px;
+    max-width: 100%;
+    border-radius: 25px;
+    border: 2px solid #000154;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+}
+
+input[type="button"] {
+    margin: 10px;
+    height: 50px;
+    width: 120px;
+    background: #000154;
+    color: #FFFFFF;
+    border-radius: 25px;
+    font-size: 35px;
+    font-family: Calibri, sans-serif;
+}
+
+input[type="radio"] {
+    height: 20px;
+    width: 20px;
+}
+
+.radio-label {
+    height: 30px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.newGame {
+    text-align: center;
+}
+
+#timer {
+    color: #FF0000;
+}
+
+h2 {
+    color: #554FF2;
+}
+
+table {
+    width: 100%;
+    margin: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.hs-nickname {
+    font-weight: bold;
+}
+
+.newGame {
+    margin: 0 auto;
+    height: 40px;
+    padding: 10px;
+    padding-top: 20px;
+    width: 200px;
+    background: #554FF2;
+    color: #FFFFFF;
+    border-radius: 25px;
+    border: 2px solid #000154;
+    font-size: 30px;
+    text-align: center;
+}
+
+.newGame a {
+    padding-top: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}

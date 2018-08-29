@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Personal Web Desktop</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/memory.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/chat.css">
+
+    <!-- Templates -->
+    <template id="temp-window">
+        <div class="window">
+            <div class="window-top">
+                <i class="material-icons md-24 window-icon no-pointer"></i><span class="window-title no-pointer"></span><span class="window-title-extra no-pointer"></span>
+                <div class="window-buttons">
+                    <span class="button exit-btn" title="Close"><span class="exit-cross"><i class="material-icons md-18">close</i></span></span>
+                    <span class="button minimize-btn" title="Minimize"><span class="minimize-icon"><i class="material-icons md-18">remove</i></span></span>
+                </div>
+            </div>
+            <div class="window-menu"></div>
+            <div class="window-content"></div>
+        </div>
+    </template>
+
+    <template id="temp-tooltip">
+        <div class="tooltip-line">
+            <span class="tooltip float-left"></span>
+            <i class="material-icons md-16 float-right tooltip-close" title="Close">close</i>
+        </div>
+    </template>
+
+    <template id="temp-maximize-btn">
+        <span class="button maximize-btn" title="Maximize"><span class="maximize-icon"><i class="material-icons md-13 resize-icon">crop_din</i></span></span>
+    </template>
+
+    <template id="temp-window-menu-alt">
+        <a class="menu-alt"></a>
+    </template>
+
+    <template id="temp-settings">
+        <div class="settings-wrapper">
+            <div class="settings"></div>
+        </div>
+    </template>
+
+    <template id="temp-memory-settings">
+        <form class="settings-form">
+            <label>Choose board size:
+                <select name="board-size">
+                    <option value="2x2">2x2</option>
+                    <option value="2x4">2x4</option>
+                    <option value="4x4" selected>4x4</option>
+                    <option value="4x2">4x2</option>
+                </select>
+            </label>
+            <input type="button" id="submit" value="Save"/>
+        </form>
+    </template>
+
+    <template id="temp-memory-gameover">
+        <div class="memory-gameover-wrapper">
+            <div class="memory-gameover">
+                <h1>Finished!</h1>
+                <h3>Number of tries: <span class="memory-turns"></span></h3>
+                <h3>Time: <span class="memory-time"></span> seconds</h3>
+            </div>
+        </div>
+    </template>
+
+    <template id="temp-chat-app">
+        <div class="chat-message-list">
+            <ul>
+            </ul>
+        </div>
+        <div class="chat-form">
+            <form>
+                <textarea class="inputField" title="Message"></textarea>
+                <input class="chat-sendBtn" title="Send" type="button" value="Send" disabled="disabled">
+            </form>
+        </div>
+    </template>
+
+    <template id="temp-chat-message-line">
+        <li>
+            <div class="chat-message-line">
+                <span class="chat-username"></span><span class="chat-message"></span>
+            </div>
+        </li>
+    </template>
+
+    <template id="temp-chat-history-separator">
+        <div class="chat-history-separator"><i class="material-icons md-12">history</i> History</div>
+    </template>
+
+    <template id="temp-chat-settings">
+        <form class="settings-form">
+            <label>Username: <input type="text" name="username" placeholder="Enter Username">
+            </label><br>
+            <label>Server: <input type="text" name="server">
+            </label><br>
+            <label>Channel: <input type="text" name="channel" placeholder="optional">
+            </label><br>
+            <label><input type="button" value="Save"/></label>
+        </form>
+    </template>
+
+    <template id="temp-chat-emoji">
+        <span class="emoji"></span>
+    </template>
+
+    <template id="temp-window-menu-info">
+        <span class="menu-info"></span>
+    </template>
+
+    <template id="temp-remember-app">
+        <div class="note-list">
+            <ul>
+            </ul>
+        </div>
+        <div class="remember-form">
+            <form>
+                <textarea class="note-input" title="Note"></textarea>
+                <input class="note-button" title="Add" type="button" value="Add" disabled="disabled">
+            </form>
+        </div>
+    </template>
+
+    <template id="temp-info">
+        <h3>Personal Web Desktop</h3>
+        <br>
+        <p><strong>Creator:</strong>Alva Fandrey</p>
+        <p><strong>Github:</strong>afandrey</p>
+        <p><strong>Location:</strong>Kalmar, Sweden</p>
+        <br>
+        <p>Project at Linneuniversitetet, Kalmar.</p>
+    </template>
+    <!-- End templates -->
+</head>
+<body>
+<div id="main-frame" class="main-frame">
+    <div class="launcher">
+        <ul>
+            <li value="reset">
+                <i class="material-icons md-30">loop</i>
+                <div class="tooltip-container">
+                    <div class="tooltip-line">
+                        <span class="tooltip-title">Reset Desktop</span>
+                    </div>
+                </div>
+            </li>
+            <li value="info">
+                <i class="material-icons md-30 launch-icon">help_outline</i>
+                <div class="tooltip-container">
+                    <div class="tooltip-line">
+                        <span class="tooltip-title">Info</span>
+                    </div>
+                </div>
+            </li>
+            <li value="memory">
+                <i class="material-icons md-30">apps</i>
+                <div class="tooltip-container">
+                    <div class="tooltip-line">
+                        <span class="tooltip-title">Memory</span>
+                    </div>
+                </div>
+            </li>
+            <li value="chat">
+                <i class="material-icons md-30 launch-icon">chat</i>
+                <div class="tooltip-container">
+                    <div class="tooltip-line">
+                        <span class="tooltip-title">Chat</span>
+                    </div>
+                </div>
+            </li>
+            <li value="remember">
+                <i class="material-icons md-30">notes</i>
+                <div class="tooltip-container">
+                    <div class="tooltip-line">
+                        <span class="tooltip-title">Notes</span>
+                    </div>
+                </div>
+            </li>
+            <li value="example">
+                <i class="material-icons md-30">bug_report</i>
+                <div class="tooltip-container">
+                    <div class="tooltip-line">
+                        <span class="tooltip-title">TestWindow</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="launcher-clock">
+            <span class="launcher-clock-time">99:99</span>
+            <span class="launcher-clock-date">9999-99-99</span>
+        </div>
+    </div>
+</div>
+
+<script src="javascript/build.js"></script>
+</body>
+</html>
